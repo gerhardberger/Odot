@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Odot.NewTaskPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="0,34,0,0" BackgroundColor="#535478">
+            <StackLayout Orientation="Horizontal" Padding="10,0,10,8">
+                <Button Text="Cancel" Clicked="OnCancel" WidthRequest="60" FontSize="18" TextColor="#9af6dd" />
+				<ContentView HorizontalOptions="CenterAndExpand" Padding="0,12,0,0">
+                	<Label Text="New" FontSize="18" FontAttributes="Bold" TextColor="#9af6dd" />
+				</ContentView>
+				<Button Text="Save" Clicked="OnSave" WidthRequest="60" FontSize="18" TextColor="#9af6dd" />
+            </StackLayout>
+			<Entry Placeholder="Add a new task..." x:Name="TextArea" FontSize="28" TextColor="#535478" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

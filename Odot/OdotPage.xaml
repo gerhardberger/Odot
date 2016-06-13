@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Odot.OdotPage">
+	<ContentPage.Title>ODOT</ContentPage.Title>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="New" Order="Primary" Clicked="OnNewTapped" x:Name="NewButton" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<ListView x:Name="TasksView" 
+			  ItemTapped="OnItemTapped" RowHeight="54">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Clicked="OnComplete" CommandParameter="{Binding .}"
+				               Text="Complete" />
+						</ViewCell.ContextActions>
+						<StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" Padding="16,18,16,18">
+                                <Label Text="{Binding Text}" TextColor="#535478" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding SpannedTime}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#999" FontSize="14" FontAttributes="Bold" />
+                            </StackLayout>
+                        </StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
